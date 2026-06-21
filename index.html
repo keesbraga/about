@@ -123,57 +123,22 @@
     </div>
 
     <div class="cards portfolio-grid">
-      <div class="card portfolio-card" data-category="appointment">
+      <button class="card portfolio-card icon-trigger" data-category="appointment" data-modal-target="modal-appointment">
         <div class="portfolio-thumb">📞</div>
         <h3>Calendar Booking &amp; Outreach Flow</h3>
-        <p>Scripts + calendar booking workflow used to schedule and run key meetings, reducing errors across the line of business.</p>
-        <details class="sample-details">
-          <summary>View details</summary>
-          <div class="sample-content">
-            <p class="sample-msg">As a Quality Analyst, I used scripts and a calendar booking workflow to schedule and run 1-on-1 coaching sessions, calibration meetings, and manager check-ins to reduce errors across the line of business — the same scheduling and follow-through skills I bring to appointment setting.</p>
-          </div>
-        </details>
-      </div>
-      <div class="card portfolio-card" data-category="automation">
+      </button>
+      <button class="card portfolio-card icon-trigger" data-category="automation" data-modal-target="modal-automation">
         <div class="portfolio-thumb">⚙️</div>
         <h3>AI Follow-Up Automation</h3>
-        <p>Automated email/SMS follow-up sequence built with Make/Zapier to re-engage cold leads without manual effort.</p>
-        <details class="sample-details">
-          <summary>View sample sequence</summary>
-          <div class="sample-content">
-            <p class="sample-label">Automation Flow</p>
-            <ol>
-              <li>Trigger: Lead tagged "Cold" in CRM (no reply in 14+ days)</li>
-              <li>Day 0: Send re-engagement email</li>
-              <li>Wait 2 days → if no open/click → Day 2: Send SMS</li>
-              <li>Wait 3 days → if no reply → Day 5: Send final email</li>
-              <li>If reply at any step → auto-remove from sequence, notify rep</li>
-            </ol>
-            <p class="sample-label">Email 1 — Day 0</p>
-            <p class="sample-msg"><em>Subject: Still thinking about [Service/Offer]?</em><br>
-            Hi [First Name], I noticed we hadn't connected in a bit — wanted to check if [pain point] is still something you're looking to solve. If now's a better time to chat, I'd love to grab 15 minutes this week. Here's my calendar: [Booking Link]. No pressure either way — just here when you're ready. — Kees</p>
-            <p class="sample-label">SMS — Day 2</p>
-            <p class="sample-msg">Hi [First Name], it's Kees 👋 Just following up on my last email — would a quick 15-min call this week work for you? Here's my calendar: [Booking Link]</p>
-            <p class="sample-label">Email 3 — Day 5 (Final)</p>
-            <p class="sample-msg"><em>Subject: Closing the loop</em><br>
-            Hi [First Name], didn't want to keep filling your inbox, so this'll be my last note for now. If priorities shift and you'd like to revisit [Service/Offer], I'm just an email away. Wishing you the best either way! — Kees</p>
-          </div>
-        </details>
-      </div>
-      <div class="card portfolio-card" data-category="design">
-        <button class="preview-trigger" data-modal-target="design-modal">
-          <img class="portfolio-img" src="design-dentastix-photo.png" alt="Brand and content design samples preview">
-          <span class="preview-overlay">View all samples ✦</span>
-        </button>
+      </button>
+      <button class="card portfolio-card icon-trigger" data-category="design" data-modal-target="design-modal">
+        <div class="portfolio-thumb">🎨</div>
         <h3>Brand &amp; Content Design Samples</h3>
-        <p>AI-generated visuals built from descriptive, realistic prompts — click the preview to view the full set.</p>
-      </div>
-      <div class="card portfolio-card" data-category="qa">
+      </button>
+      <button class="card portfolio-card icon-trigger" data-category="qa" data-modal-target="modal-qa">
         <div class="portfolio-thumb">📊</div>
         <h3>Process Audit Sample</h3>
-        <p>Example of a QA/process review: identifying gaps and recommending fixes for a client workflow.</p>
-        <span class="placeholder-tag">Add project link / screenshot</span>
-      </div>
+      </button>
     </div>
     <p class="and-more">And many more..</p>
   </div>
@@ -252,9 +217,51 @@
   <p>© <span id="year"></span> Chikee Braga. Built with intention, not a template.</p>
 </footer>
 
+<div class="modal" id="modal-appointment">
+  <div class="modal-inner">
+    <button class="modal-close" aria-label="Close">×</button>
+    <h3 class="modal-title">Calendar Booking &amp; Outreach Flow</h3>
+    <p class="sample-msg">As a Quality Analyst, I used scripts and a calendar booking workflow to schedule and run 1-on-1 coaching sessions, calibration meetings, and manager check-ins to reduce errors across the line of business — the same scheduling and follow-through skills I bring to appointment setting.</p>
+  </div>
+</div>
+
+<div class="modal" id="modal-automation">
+  <div class="modal-inner">
+    <button class="modal-close" aria-label="Close">×</button>
+    <h3 class="modal-title">AI Follow-Up Automation</h3>
+    <p class="sample-msg">Automated email/SMS follow-up sequence built with Make/Zapier to re-engage cold leads without manual effort.</p>
+    <p class="sample-label">Automation Flow</p>
+    <ol>
+      <li>Trigger: Lead tagged "Cold" in CRM (no reply in 14+ days)</li>
+      <li>Day 0: Send re-engagement email</li>
+      <li>Wait 2 days → if no open/click → Day 2: Send SMS</li>
+      <li>Wait 3 days → if no reply → Day 5: Send final email</li>
+      <li>If reply at any step → auto-remove from sequence, notify rep</li>
+    </ol>
+    <p class="sample-label">Email 1 — Day 0</p>
+    <p class="sample-msg"><em>Subject: Still thinking about [Service/Offer]?</em><br>
+    Hi [First Name], I noticed we hadn't connected in a bit — wanted to check if [pain point] is still something you're looking to solve. If now's a better time to chat, I'd love to grab 15 minutes this week. Here's my calendar: [Booking Link]. No pressure either way — just here when you're ready. — Kees</p>
+    <p class="sample-label">SMS — Day 2</p>
+    <p class="sample-msg">Hi [First Name], it's Kees 👋 Just following up on my last email — would a quick 15-min call this week work for you? Here's my calendar: [Booking Link]</p>
+    <p class="sample-label">Email 3 — Day 5 (Final)</p>
+    <p class="sample-msg"><em>Subject: Closing the loop</em><br>
+    Hi [First Name], didn't want to keep filling your inbox, so this'll be my last note for now. If priorities shift and you'd like to revisit [Service/Offer], I'm just an email away. Wishing you the best either way! — Kees</p>
+  </div>
+</div>
+
+<div class="modal" id="modal-qa">
+  <div class="modal-inner">
+    <button class="modal-close" aria-label="Close">×</button>
+    <h3 class="modal-title">Process Audit Sample</h3>
+    <p class="sample-msg">Example of a QA/process review: identifying gaps and recommending fixes for a client workflow.</p>
+    <span class="placeholder-tag">Add project link / screenshot</span>
+  </div>
+</div>
+
 <div class="modal" id="design-modal">
   <div class="modal-inner">
     <button class="modal-close" aria-label="Close">×</button>
+    <h3 class="modal-title">Brand &amp; Content Design Samples</h3>
     <div class="carousel">
       <div class="carousel-track">
         <div class="carousel-slide">
@@ -316,7 +323,7 @@ document.querySelectorAll('.carousel').forEach(carousel => {
   carousel.querySelector('.next').addEventListener('click', () => goTo(index + 1));
 });
 
-document.querySelectorAll('.preview-trigger').forEach(btn => {
+document.querySelectorAll('.preview-trigger, .icon-trigger').forEach(btn => {
   btn.addEventListener('click', () => {
     const modal = document.getElementById(btn.dataset.modalTarget);
     if (modal) modal.classList.add('open');
