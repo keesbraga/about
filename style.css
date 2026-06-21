@@ -128,15 +128,6 @@ a { color: inherit; text-decoration: none; }
 
 /* CARDS / PORTFOLIO */
 .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 22px; margin-top: 36px; }
-.portfolio-grid { display: flex; flex-direction: column; gap: 22px; max-width: 760px; margin: 36px auto 0; }
-.portfolio-grid .card { display: grid; grid-template-columns: 220px 1fr; gap: 24px; align-items: center; }
-.portfolio-grid .card .carousel,
-.portfolio-grid .card .portfolio-img,
-.portfolio-grid .card .portfolio-thumb { margin-bottom: 0; }
-.portfolio-grid .card .carousel-btn { top: 80px; }
-@media (max-width: 640px) {
-  .portfolio-grid .card { grid-template-columns: 1fr; }
-}
 .card {
   background: var(--card-bg); border-radius: 18px; padding: 26px;
   box-shadow: 0 12px 26px -12px rgba(43,31,26,0.15); transition: transform .2s;
@@ -144,6 +135,36 @@ a { color: inherit; text-decoration: none; }
 .card:hover { transform: translateY(-4px); }
 .card h3 { font-size: 1.04rem; margin-bottom: 10px; font-family: 'Poppins', sans-serif; font-weight: 600; }
 .card p { color: var(--ink-soft); font-size: 0.9rem; }
+
+.preview-trigger {
+  position: relative; display: block; width: 100%; padding: 0; border: none;
+  background: none; cursor: pointer; margin-bottom: 16px; border-radius: 12px; overflow: hidden;
+}
+.preview-trigger .portfolio-img { margin-bottom: 0; transition: transform .3s; }
+.preview-trigger:hover .portfolio-img { transform: scale(1.04); }
+.preview-overlay {
+  position: absolute; inset: 0; display: flex; align-items: center; justify-content: center;
+  background: rgba(20,12,10,0.45); color: #fff; font-size: 0.9rem; font-weight: 600;
+  opacity: 0; transition: opacity .2s; font-family: 'Poppins', sans-serif;
+}
+.preview-trigger:hover .preview-overlay { opacity: 1; }
+
+.modal {
+  position: fixed; inset: 0; z-index: 1000; display: none;
+  align-items: center; justify-content: center; padding: 24px;
+  background: rgba(10,6,5,0.7); backdrop-filter: blur(4px);
+}
+.modal.open { display: flex; }
+.modal-inner {
+  position: relative; background: var(--bg-3); border-radius: 18px; padding: 28px;
+  max-width: 480px; width: 100%; box-shadow: 0 24px 60px -10px rgba(0,0,0,0.4);
+}
+.modal-close {
+  position: absolute; top: -14px; right: -14px; width: 34px; height: 34px; border-radius: 50%;
+  background: var(--ink); color: #fff; border: none; font-size: 1.2rem; cursor: pointer;
+  display: flex; align-items: center; justify-content: center; z-index: 1;
+}
+.modal .carousel { margin-bottom: 0; }
 
 .carousel { position: relative; margin-bottom: 16px; border-radius: 12px; overflow: hidden; }
 .carousel-track {

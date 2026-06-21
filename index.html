@@ -156,31 +156,12 @@
         </details>
       </div>
       <div class="card portfolio-card" data-category="design">
-        <div class="carousel">
-          <div class="carousel-track">
-            <div class="carousel-slide">
-              <img class="portfolio-img" src="design-dentastix-photo.png" alt="Realistic studio-style pet product photo">
-              <p class="carousel-caption"><strong>Pet Product Studio Shot</strong> — Realistic studio-style pet photography generated with descriptive lighting and composition prompts.</p>
-            </div>
-            <div class="carousel-slide">
-              <img class="portfolio-img" src="design-dentastix-illustration.png" alt="Illustrated pet product artwork">
-              <p class="carousel-caption"><strong>Illustrated Pet Artwork</strong> — Soft, hand-drawn style illustration generated from descriptive prompts for a playful brand concept.</p>
-            </div>
-            <div class="carousel-slide">
-              <img class="portfolio-img" src="design-brand-2.png" alt="Personal brand editorial photo">
-              <p class="carousel-caption"><strong>Personal Brand Visual</strong> — Editorial-style brand photo generated with realistic lighting and composition prompts.</p>
-            </div>
-            <div class="carousel-slide">
-              <img class="portfolio-img" src="design-brand-3.png" alt="Personal brand editorial photo close-up">
-              <p class="carousel-caption"><strong>Personal Brand Visual</strong> — Editorial-style close-up brand photo generated with realistic lighting and composition prompts.</p>
-            </div>
-          </div>
-          <button class="carousel-btn prev" aria-label="Previous">‹</button>
-          <button class="carousel-btn next" aria-label="Next">›</button>
-          <div class="carousel-dots"></div>
-        </div>
+        <button class="preview-trigger" data-modal-target="design-modal">
+          <img class="portfolio-img" src="design-dentastix-photo.png" alt="Brand and content design samples preview">
+          <span class="preview-overlay">View all samples ✦</span>
+        </button>
         <h3>Brand &amp; Content Design Samples</h3>
-        <p>AI-generated visuals built from descriptive, realistic prompts — swipe or use the arrows to view the set.</p>
+        <p>AI-generated visuals built from descriptive, realistic prompts — click the preview to view the full set.</p>
       </div>
       <div class="card portfolio-card" data-category="qa">
         <div class="portfolio-thumb">📊</div>
@@ -266,6 +247,35 @@
   <p>© <span id="year"></span> Chikee Braga. Built with intention, not a template.</p>
 </footer>
 
+<div class="modal" id="design-modal">
+  <div class="modal-inner">
+    <button class="modal-close" aria-label="Close">×</button>
+    <div class="carousel">
+      <div class="carousel-track">
+        <div class="carousel-slide">
+          <img class="portfolio-img" src="design-dentastix-photo.png" alt="Realistic studio-style pet product photo">
+          <p class="carousel-caption"><strong>Pet Product Studio Shot</strong> — Realistic studio-style pet photography generated with descriptive lighting and composition prompts.</p>
+        </div>
+        <div class="carousel-slide">
+          <img class="portfolio-img" src="design-dentastix-illustration.png" alt="Illustrated pet product artwork">
+          <p class="carousel-caption"><strong>Illustrated Pet Artwork</strong> — Soft, hand-drawn style illustration generated from descriptive prompts for a playful brand concept.</p>
+        </div>
+        <div class="carousel-slide">
+          <img class="portfolio-img" src="design-brand-2.png" alt="Personal brand editorial photo">
+          <p class="carousel-caption"><strong>Personal Brand Visual</strong> — Editorial-style brand photo generated with realistic lighting and composition prompts.</p>
+        </div>
+        <div class="carousel-slide">
+          <img class="portfolio-img" src="design-brand-3.png" alt="Personal brand editorial photo close-up">
+          <p class="carousel-caption"><strong>Personal Brand Visual</strong> — Editorial-style close-up brand photo generated with realistic lighting and composition prompts.</p>
+        </div>
+      </div>
+      <button class="carousel-btn prev" aria-label="Previous">‹</button>
+      <button class="carousel-btn next" aria-label="Next">›</button>
+      <div class="carousel-dots"></div>
+    </div>
+  </div>
+</div>
+
 <script>
 document.getElementById('year').textContent = new Date().getFullYear();
 
@@ -303,6 +313,24 @@ document.querySelectorAll('.carousel').forEach(carousel => {
 
   carousel.querySelector('.prev').addEventListener('click', () => goTo(index - 1));
   carousel.querySelector('.next').addEventListener('click', () => goTo(index + 1));
+});
+
+document.querySelectorAll('.preview-trigger').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const modal = document.getElementById(btn.dataset.modalTarget);
+    if (modal) modal.classList.add('open');
+  });
+});
+
+document.querySelectorAll('.modal').forEach(modal => {
+  modal.querySelector('.modal-close').addEventListener('click', () => modal.classList.remove('open'));
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal) modal.classList.remove('open');
+  });
+});
+
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') document.querySelectorAll('.modal.open').forEach(m => m.classList.remove('open'));
 });
 </script>
 </body>
