@@ -128,6 +128,15 @@ a { color: inherit; text-decoration: none; }
 
 /* CARDS / PORTFOLIO */
 .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 22px; margin-top: 36px; }
+.portfolio-grid { display: flex; flex-direction: column; gap: 22px; max-width: 760px; margin: 36px auto 0; }
+.portfolio-grid .card { display: grid; grid-template-columns: 220px 1fr; gap: 24px; align-items: center; }
+.portfolio-grid .card .carousel,
+.portfolio-grid .card .portfolio-img,
+.portfolio-grid .card .portfolio-thumb { margin-bottom: 0; }
+.portfolio-grid .card .carousel-btn { top: 80px; }
+@media (max-width: 640px) {
+  .portfolio-grid .card { grid-template-columns: 1fr; }
+}
 .card {
   background: var(--card-bg); border-radius: 18px; padding: 26px;
   box-shadow: 0 12px 26px -12px rgba(43,31,26,0.15); transition: transform .2s;
@@ -213,6 +222,8 @@ a { color: inherit; text-decoration: none; }
 .timeline-date { color: var(--gold); font-size: 0.85rem; font-weight: 700; letter-spacing: 0.03em; }
 .timeline-item h3 { font-size: 1.02rem; margin: 6px 0 8px; font-family: 'Poppins', sans-serif; font-weight: 600; }
 .timeline-item p { color: var(--ink-soft); font-size: 0.92rem; }
+.timeline-list { margin-top: 8px; padding-left: 18px; display: grid; gap: 6px; }
+.timeline-list li { color: var(--ink-soft); font-size: 0.9rem; line-height: 1.55; }
 
 .skills-wrap { margin-top: 50px; }
 .skills-wrap h3 { font-family: 'Playfair Display', serif; font-size: 1.3rem; margin-bottom: 18px; }
