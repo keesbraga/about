@@ -273,8 +273,16 @@
   <div class="modal-inner">
     <button class="modal-close" aria-label="Close">×</button>
     <h3 class="modal-title">Process Audit Sample</h3>
-    <p class="sample-msg">Example of a QA/process review: identifying gaps and recommending fixes for a client workflow.</p>
-    <span class="placeholder-tag">Add project link / screenshot</span>
+    <p class="sample-msg">A QA audit workbook sampling a minimum of 3% of each agent's resolved tickets per queue. Agent decisions are pulled via VLOOKUP from a Scuba database export (TSV), with accuracy automatically flagged whenever the QA reviewer's decision differs from the agent's.</p>
+    <p class="sample-label">Included Sheets</p>
+    <ul class="timeline-list">
+      <li>Raw Export — simulated Scuba TSV export of agent-resolved tickets</li>
+      <li>QA Audit — VLOOKUP-driven review with auto Match/ERROR flagging</li>
+      <li>Accuracy Summary — accuracy % and audit coverage % per agent and queue</li>
+    </ul>
+    <p class="sample-label">Queues Covered</p>
+    <p class="sample-msg">X-Check, PRM, Proactive, Targeted Enforcement, Community Notes, Memorialization, Sextortion Appeals, ANZ XCheck, Name Authenticity/Identity, Support Investigation, Escalation Tagging</p>
+    <a class="btn-primary" href="QA_Audit_Sample.xlsx" download style="display:inline-block;margin-top:14px;">Download Sample (.xlsx)</a>
   </div>
 </div>
 
