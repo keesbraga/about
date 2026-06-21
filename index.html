@@ -133,7 +133,27 @@
         <div class="portfolio-thumb">⚙️</div>
         <h3>AI Follow-Up Automation</h3>
         <p>Automated email/SMS follow-up sequence built with Make/Zapier to re-engage cold leads without manual effort.</p>
-        <span class="placeholder-tag">Add project link / screenshot</span>
+        <details class="sample-details">
+          <summary>View sample sequence</summary>
+          <div class="sample-content">
+            <p class="sample-label">Automation Flow</p>
+            <ol>
+              <li>Trigger: Lead tagged "Cold" in CRM (no reply in 14+ days)</li>
+              <li>Day 0: Send re-engagement email</li>
+              <li>Wait 2 days → if no open/click → Day 2: Send SMS</li>
+              <li>Wait 3 days → if no reply → Day 5: Send final email</li>
+              <li>If reply at any step → auto-remove from sequence, notify rep</li>
+            </ol>
+            <p class="sample-label">Email 1 — Day 0</p>
+            <p class="sample-msg"><em>Subject: Still thinking about [Service/Offer]?</em><br>
+            Hi [First Name], I noticed we hadn't connected in a bit — wanted to check if [pain point] is still something you're looking to solve. If now's a better time to chat, I'd love to grab 15 minutes this week. Here's my calendar: [Booking Link]. No pressure either way — just here when you're ready. — Kees</p>
+            <p class="sample-label">SMS — Day 2</p>
+            <p class="sample-msg">Hi [First Name], it's Kees 👋 Just following up on my last email — would a quick 15-min call this week work for you? Here's my calendar: [Booking Link]</p>
+            <p class="sample-label">Email 3 — Day 5 (Final)</p>
+            <p class="sample-msg"><em>Subject: Closing the loop</em><br>
+            Hi [First Name], didn't want to keep filling your inbox, so this'll be my last note for now. If priorities shift and you'd like to revisit [Service/Offer], I'm just an email away. Wishing you the best either way! — Kees</p>
+          </div>
+        </details>
       </div>
       <div class="card portfolio-card" data-category="design">
         <img class="portfolio-img" src="design-3ways.png" alt="Carousel cover design: 3 Ways I Help You Scale">
