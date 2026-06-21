@@ -273,13 +273,13 @@
   <div class="modal-inner">
     <button class="modal-close" aria-label="Close">×</button>
     <h3 class="modal-title">Process Audit Sample</h3>
-    <p class="sample-msg">A QA audit workbook sampling a minimum of 3% of each agent's resolved tickets per queue. Agent decisions are pulled via VLOOKUP from a Scuba database export (TSV), with accuracy automatically flagged whenever the QA reviewer's decision differs from the agent's.</p>
+    <p class="sample-msg">A blind QA audit workbook sampling a minimum of 3% of each Actor ID's resolved tickets per queue — no agent names, identity-blind by design. Agent decisions are pulled via VLOOKUP from a Scuba database export (TSV), with accuracy automatically flagged whenever the QA reviewer's decision differs from the agent's.</p>
     <p class="sample-label">Included Sheets</p>
     <ul class="timeline-list">
-      <li>Raw Export — simulated Scuba TSV export of agent-resolved tickets</li>
+      <li>Raw Export — simulated Scuba TSV export of resolved tickets, keyed by Actor ID</li>
       <li>QA Audit (Demo Sample) — VLOOKUP-driven review with auto Match/ERROR flagging</li>
-      <li>QA Manual Audit Template — blank working sheet: enter a Ticket ID, Agent info auto-fills via VLOOKUP, enter your QA Decision to auto-flag accuracy</li>
-      <li>Accuracy Summary — accuracy % and audit coverage % per agent and queue</li>
+      <li>QA Manual Audit Template — select an Actor ID and the Ticket ID, Queue, Date & Agent Decision auto-populate; enter your QA Decision &amp; Notes to auto-flag accuracy</li>
+      <li>Accuracy Summary — accuracy % and audit coverage % per Actor and per Queue (overall queue-level rollup included)</li>
     </ul>
     <p class="sample-label">Works in Google Sheets too</p>
     <p class="sample-msg">Open Google Drive → New → File upload → select the downloaded file → it auto-converts, or open it and choose "Open with Google Sheets." All formulas and dropdowns carry over.</p>
