@@ -276,15 +276,19 @@
     <p class="sample-msg">A blind QA audit workbook sampling a minimum of 3% of each Actor ID's resolved tickets per queue — no agent names, identity-blind by design. Agent decisions are pulled via VLOOKUP from a Scuba database export (TSV), with accuracy automatically flagged whenever the QA reviewer's decision differs from the agent's.</p>
     <p class="sample-label">Included Sheets</p>
     <ul class="timeline-list">
-      <li>Raw Export — simulated Scuba TSV export of resolved tickets, keyed by Actor ID</li>
-      <li>QA Audit (Demo Sample) — VLOOKUP-driven review with auto Match/ERROR flagging</li>
+      <li>Raw Export — simulated Scuba TSV export of resolved tickets across all queues, keyed by Actor ID</li>
+      <li>QA Audit (Demo Sample) — main queues, VLOOKUP-driven review with auto Match/ERROR flagging</li>
       <li>QA Manual Audit Template — select an Actor ID and the Ticket ID, Queue, Date & Agent Decision auto-populate; enter your QA Decision &amp; Notes to auto-flag accuracy</li>
-      <li>Accuracy Summary — accuracy % and audit coverage % per Actor and per Queue (overall queue-level rollup included)</li>
+      <li>Escalation Tagging Audit — separate table, rated GOOD / FAIR / BAD instead of a violation category, with its own accuracy-by-actor breakdown</li>
+      <li>Support Investigation Audit — separate table using the same violation categories, with its own accuracy-by-actor breakdown</li>
+      <li>Accuracy Summary — accuracy % and audit coverage % per Actor and per Queue for the main queues (overall queue-level rollup included)</li>
     </ul>
     <p class="sample-label">Works in Google Sheets too</p>
     <p class="sample-msg">Open Google Drive → New → File upload → select the downloaded file → it auto-converts, or open it and choose "Open with Google Sheets." All formulas and dropdowns carry over.</p>
-    <p class="sample-label">Queues Covered</p>
-    <p class="sample-msg">X-Check, PRM, Proactive, Targeted Enforcement, Community Notes, Memorialization, Sextortion Appeals, ANZ XCheck, Name Authenticity/Identity, Support Investigation, Escalation Tagging</p>
+    <p class="sample-label">Queues &amp; Policy Mapping</p>
+    <p class="sample-msg">X-Check, PRM, Proactive, Targeted Enforcement, Community Notes, ANZ XCheck — general violation categories (Hateful Conduct, Adult Nudity & Sexual Activity, Adult Sexual Solicitation & Prostitution, Bullying & Harassment, Spam, Fraud & Deceptive Practices, Child Safety, Dangerous Organizations).<br>
+    Deceased → Memorialization policy. Sextortion → Sextortion Appeals policy. Name Reject → Name Authenticity/Identity policy.<br>
+    Escalation Tagging → GOOD/FAIR/BAD rating (separate table). Support Investigation → general violation categories (separate table).</p>
     <a class="btn-primary" href="QA_Audit_Sample.xlsx" download style="display:inline-block;margin-top:14px;">Download Sample (.xlsx)</a>
   </div>
 </div>
